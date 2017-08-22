@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*css reset*/
+		body,p,ul,li,dl,dd,h1,h2,h3,h4,h5,h6,form,input,textarea,select{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		img{
+			border: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+		strong{
+			font-style: normal;
+		}
+		.clearfix{
+			zoom: 1;
+		}
+		.clearfix:after{
+			content: ".";
+			display: block;
+			height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+		/*css reset*/
+		body{
+			background: #fff url(img/body_bg.png) repeat-x;
+		}
+		#top{
+			width: 960px;
+			height: 30px;
+			margin: 0 auto;
+		}
+		/*顶部导航左边*/
+		.top-left{
+			float: left;
+		}
+		.top-left li{
+			float: left;
+			padding-right: 18px;
+			margin-right: 15px;
+			background: url(img/top_bg.png) right 16px no-repeat;
+		}
+		.top-left li a{
+			display: block;
+			color: #c0c0c0;
+			height: 30px;
+			font: 13px/30px Arial,sans-serif;
+		}
+		.top-left .nodot{
+			padding-right: 0;
+			margin-right: 0;
+			background-image: none;
+		}
+		/*顶部导航右边*/
+		.top-right{
+			float: right;
+		}
+		.top-right li{
+			float: left;
+		}
+		.top-right li a{
+			display: block;
+			color: #fff;
+			height: 30px;
+			font: 700 13px/30px Arial,sans-serif;
+		}
+		.top-right .phone{
+			padding: 0 38px 0 28px;
+			background: url(img/top_bg.png) 0 -27px no-repeat;
+		}
+		.top-right .help{
+			padding: 0 28px 0 38px;
+			background: url(img/top_bg.png) 0 -55px no-repeat;
+		}
+		.top-right .language{
+			margin-right: 13px;
+		}
+		/*header------------------------*/
+		#header{
+			width: 960px;
+			height: 99px;
+			margin: 0 auto;
+			position: relative;
+			background-image: url(img/header_bg.png);
+		}
+		/*shopping-----------------*/
+		.shopping{
+			width: 278px;
+			height: 99px;
+			background: url(img/header_shopping.png) no-repeat;
+			position: relative;
+		}
+		.shopping p{
+			font: 20px Arial,sans-serif;
+			color: #f7f7f7;
+			padding: 32px 0 0 85px;
+		}
+		.shopping a{
+			width: 114px;
+			height: 23px;
+			background: url(img/header_shopping.png) 0 -99px no-repeat;
+			position: absolute;
+			left: 104px;
+			top: 63px;
+			font: 700 15px Arial,sans-serif;
+			color: #ffc200;
+			text-align: center;
+		}
+		/*logo------------------*/
+		#header h1{
+			position: absolute;
+			left: 50%;
+			top: 0;
+			margin-left: -119px;
+		}
+		/*search.........................*/
+		.search{
+			width: 292px;
+			height: 31px;
+			background: url(img/search_bg.png) no-repeat;
+			position: absolute;
+		}
+		#header .search{
+			top: 33px;
+			right: 0;
+		}
+		input{
+			background: none;
+			border: none;
+			outline: none;
+		}
+		.search input[type="text"]{
+			width: 250px;
+			height: 30px;
+			position: absolute;
+			left: 21px;
+			top: 0;
+			font: 13px/30px Arial,sans-serif;
+		}
+		.search input[type="button"]{
+			width: 42px;
+			height: 30px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			cursor: pointer;
+		}
+		/*nav..........................*/
+		#nav{
+			width: 960px;
+			height: 36px;
+			margin: 0 auto;
+			padding: 8px 0 0 25px;
+		}
+		#nav li{
+			float: left;
+			margin-right: 2px;
+		}
+		#nav a{
+			float: left;
+		}
+		#nav strong{
+			float: left;
+		}
+		#nav span{
+			float: left;
+			color: #fff;
+			height: 28px;
+			padding: 0 17px;
+			font: 16px/28px Myriad Pro,sans-serif;
+		}
+		#nav a:hover,#nav .active a{
+			background: url(img/nav_active_bg.png) 0 -56px repeat-x;
+		}
+		#nav a:hover strong,#nav .active strong{
+			background: url(img/nav_active_bg.png) no-repeat;
+		}
+		#nav a:hover span,#nav .active span{
+			background: url(img/nav_active_bg.png) right -28px no-repeat;
+		}
+		/*内容区域 内容区域*/
+		#content{
+			width: 1000px;
+			margin: 24px auto 0;
+			background: url(img/content_bg.png) -1000px 0 repeat-y;
+		}
+		.content-top{
+			background: url(img/content_bg.png) no-repeat;
+		}
+		.content-bottom{
+			background: url(img/content_bg.png) -2000px bottom no-repeat;
+			padding-top: 10px;
+		}
+		/*内容的banner*/
+		.banner{
+			width: 940px;
+			height: 300px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.banner ul{
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+		.banner li{
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 2;
+		}
+		.banner h2{
+			position: absolute;
+			left: 0;
+			bottom: 11px;
+			z-index: 3;
+			color: #ffc600;
+			font: 700 25px Arial,sans-serif;
+			width: 268px;
+			text-align: center;
+		}
+		.banner p{
+			position: absolute;
+			left: 268px;
+			bottom: 11px;
+			z-index: 3;
+			width: 628px;
+			color: #ffcccc;
+			font: 13px/16px Arial,sans-serif;
+		}
+		.banner .bg{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: 2;
+			width: 940px;
+			height: 52px;
+			background-color: #000;
+			filter: alpha(opacity=80);
+			opacity: 0.8;
+		}
+		/*主要内容区域*/
+		.main{
+			width: 942px;
+			margin: 0 auto;
+			padding-top: 31px;
+		}
+		.sidebar{
+			width: 209px;
+			float: left;
+		}
+		.wrap{
+			width: 706px;
+			float: right;
+		}
+		.module-menu{
+			width: 209px;
+		}
+		.module-menu h2{
+			height: 29px;
+			background: url(img/side_top_bg.png) repeat-x;
+		}
+		.module-menu h2 strong{
+			display: block;
+			height: 29px;
+			background: url(img/side_top_bg.png) 0 -29px no-repeat;
+		}
+		.module-menu h2 strong span{
+			display: block;
+			height: 29px;
+			background: url(img/side_top_bg.png) right -58px no-repeat;
+			font: 700 15px/28px Arial,sans-serif;
+			color: #fff;
+			text-align: center;
+		}
+		.list{
+			margin-top: 1px;
+			/*height: 360px;*/
+			background: url(img/list_bg.png) repeat-y;
+		}
+		.list ul{
+			/*height: 360px;*/
+			background: url(img/list_bg.png) -209px bottom no-repeat;
+			padding: 18px 8px 15px;
+		}
+		.list li{
+			height: 28px;
+			border-bottom: 1px solid #fff;
+			text-indent: 33px;
+		}
+		.list li a{
+			display: block;
+			height: 28px;
+			font: 700 12px/28px Arial,sans-serif;
+			color: #434343;
+		}
+		.list li a:hover{
+			color: #b20e00;
+			text-decoration: none;
+			border-bottom: 1px solid #b20e00;
+		}
+	</style>
+</head>
+<body>
+	<div id="top">
+		<ul class="top-left">  
+			<li><a href="#">Account Sign In</a></li>
+			<li><a href="#">Register</a></li>
+			<li><a href="#">Buyers Guide</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Blog</a></li>
+			<li class="nodot"><a href="#">Contact</a></li>
+		</ul>
+		<ul class="top-right">
+			<li class="phone"><a href="#">123.456.7890</a></li>
+			<li class="help"><a href="#">Live Help</a></li>
+			<li class="language"><a href="#">
+				<img src="img/canada.png" alt="canada">
+			</a></li>
+			<li><a href="#">
+				<img src="img/america.png" alt="america">
+			</a></li>
+		</ul>
+	</div>
+	<div id="header">
+		<div class="shopping">
+			<p>0 items in your bag</p>
+			<a href="#">Check Out</a>
+		</div>
+		<h1 title="econmerce website">
+			<a href="#"><img src="img/header_logo.png" alt="logo"></a>
+		</h1>
+		<div class="search">
+			<form action="post">
+				<input type="text" value="Search website">
+				<input type="button">
+			</form>
+		</div>
+	</div>
+	<ul id="nav">          
+		<li class="active"><a href="#"><strong><span>HOME</span></strong></a></li>
+		<li><a href="#"><strong><span>LATEST ARRIVALS</span></strong></a></li>
+		<li><a href="#"><strong><span>MEN'S</span></strong></a></li>
+		<li><a href="#"><strong><span>WOMEN'S</span></strong></a></li>
+		<li><a href="#"><strong><span>KIDS</span></strong></a></li>
+		<li><a href="#"><strong><span>BRANDS</span></strong></a></li>
+		<li><a href="#"><strong><span>SALE</span></strong></a></li>
+		<li><a href="#"><strong><span>GIFT CARDS</span></strong></a></li>
+		<li><a href="#"><strong><span>FREEBIES</span></strong></a></li>
+	</ul>
+	<div id="content">
+		<div class="content-top">
+			<div class="content-bottom">
+				<div class="banner">
+					<ul>
+						<li><a href="#"><img src="img/banner/1.png" alt="banner1"></a></li>
+					</ul>
+					<h2>PRODUCT TITLE</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit lacus dapibus ante mattis in adipiscing nibh placerat. Cras bibendum porta diam, non dignissim sapien malesuada vitae. </p>
+					<div class="bg"></div>
+				</div>
+				<div class="main clearfix">
+					<div class="sidebar">
+						<div class="module-menu">
+							<h2><strong><span>Browse Categories</span></strong></h2>
+							<div class="list">
+								<ul>
+									<li><a href="#">Lorem ipsum dolor sit</a></li>
+									<li><a href="#">Amet consectetur</a></li>
+									<li><a href="#">Adipiscin elit</a></li>
+									<li><a href="#">Cras suscipit lacus</a></li>
+									<li><a href="#">Dapibus ante mattis</a></li>
+									<li><a href="#">Adipiscing nibh place</rat</li>
+									<li><a href="#">Cras bibendum</a></li>
+									<li><a href="#">Porta diam elit</a></li>
+									<li><a href="#">Adipiscing nibh place</rat</li>
+									<li><a href="#">Cras bibendum</a></li>
+									<li><a href="#">Porta diam elit</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="wrap"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>
